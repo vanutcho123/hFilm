@@ -1,7 +1,17 @@
+import { useEffect } from "react";
 import "./App.css";
+import { fetchDataFromApi } from "./utils/api";
 
 function App() {
-  return <div className="app">NGUYỄN VĂN HẢI</div>;
+  useEffect(() => {
+    apiTesting();
+  }, []);
+  const apiTesting = () => {
+    fetchDataFromApi("/movie/popular").then((res) => {
+      console.log(res);
+    });
+  };
+  return <div className="App">NGUYỄN VĂN HẢI</div>;
 }
 
 export default App;
