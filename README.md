@@ -8,4 +8,8 @@ Redux Toolkit là một tập hợp các công cụ và tiện ích được cun
 
 Với sự hỗ trợ của Redux và Redux Toolkit, Movix mang lại trải nghiệm xem phim tuyệt vời cho người dùng, với khả năng tìm kiếm nhanh chóng, phân loại và phát lại các bộ phim yêu thích. Các tính năng của Movix được tối ưu để đảm bảo tốc độ, tính linh hoạt và sự ổn định, mang đến cho người dùng một trải nghiệm xem phim trực tuyến tuyệt vời.
 
+#
+
 I. SETUP PROJECT
+II. SETUP API
+III. SETUP REDUX REDUXT-TOOLKIT
