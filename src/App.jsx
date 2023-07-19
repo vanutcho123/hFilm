@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getApiConfiguration } from "./store/homeSlice";
 //
 import { fetchDataFromApi } from "./utils/api";
@@ -12,11 +12,9 @@ import Explore from "./pages/explore/Explore";
 import PageNotFound from "./pages/404/pageNotFound";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import HeroBanner from "./pages/home/heroBanner/HeroBanner";
 
 function App() {
   const dispatch = useDispatch();
-  const url = useSelector((state) => state.url);
   useEffect(() => {
     fetchApiConfig();
   }, []);
@@ -37,7 +35,6 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <HeroBanner />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:mediaType/:id" element={<Details />} />

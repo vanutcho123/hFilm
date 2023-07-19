@@ -1,8 +1,14 @@
-// import React from 'react'
+// eslint-disable-next-line no-unused-vars
+import React from "react";
 import "./Home.scss";
+import HeroBanner from "./heroBanner/HeroBanner";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div className="homePage">
+      <HeroBanner />
+    </div>
+  );
 };
 
 export default Home;
