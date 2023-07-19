@@ -45,6 +45,9 @@ const Footer = () => {
           </span>
         </div>
       </ContentWrapper>
+      <div className="footer-copyright">
+        <p>Create by Nguyễn Văn Hải | 2023 All Right reserved.</p>
+      </div>
     </footer>
   );
 };

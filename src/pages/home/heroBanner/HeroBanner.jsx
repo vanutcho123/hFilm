@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 import "./HeroBanner.scss";
 import useFetch from "../../../hooks/useFetch";
 import { useSelector } from "react-redux";
-import Img from "../../../components/lazyLoadImage/Img";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
 
 const HeroBanner = () => {
-  const [background, setBackground] = useState("");
+  const [backgrounds, setBackgrounds] = useState([]);
+  console.log(backgrounds);
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
 
@@ -16,27 +18,41 @@ const HeroBanner = () => {
   const { data, loading } = useFetch("/movie/upcoming");
 
   useEffect(() => {
-    const bg =
-      url.backdrop +
-      data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
-    setBackground(bg);
-  }, [data]);
+    if (!loading && data?.results) {
+      const bgs = data.results.map((item) => ({
+        backdrop_path: url.backdrop + item.backdrop_path,
+      }));
+      setBackgrounds(bgs);
+    }
+  }, [data, loading, url.backdrop]);
+
   const searchQueryHandler = (e) => {
     if (e.key === "Enter" && query.length > 0) {
       navigate(`/search/${query}`);
     }
   };
+
   return (
     <div className="heroBanner">
-      {!loading && (
-        <div className="backdrop-img">
-          <Img src={background} />
-        </div>
+      {backgrounds.length > 0 && ( // Check if there are backgrounds to display
+        <Carousel
+          showThumbs={false}
+          showArrows={false}
+          interval={7000}
+          autoPlay
+          infiniteLoop
+        >
+          {backgrounds.map((bg, index) => (
+            <div key={index} className="banner-img">
+              <img src={bg.backdrop_path} />
+            </div>
+          ))}
+        </Carousel>
       )}
       <div className="opacity-layer"></div>
       <ContentWrapper>
         <div className="heroBannerContent">
-          <span className="title">Welcome</span>
+          <span className="title">Welcome to hFilm</span>
           <span className="subTitle">
             Millions of movies, TV shows and people to discover. Explore now
           </span>

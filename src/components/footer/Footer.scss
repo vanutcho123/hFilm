@@ -65,4 +65,24 @@
       }
     }
   }
+  .footer-copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+    p {
+      display: inline;
+      background-image: linear-gradient(
+        to right,
+        #673ab7,
+        #009688,
+        #e91e63,
+        #009688,
+        #642d91
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      text-fill-color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+  }
 }
