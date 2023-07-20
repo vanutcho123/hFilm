@@ -22,4 +22,4 @@ Với sự hỗ trợ của Redux và Redux Toolkit, hFilm mang lại trải ngh
 10. SEARCH PAGE
 11. FINISH HFILM
 
-![POSTER](../hFilm/src/assets/poster.png)
+![POSTER](./src/assets/poster.png)
