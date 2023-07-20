@@ -18,3 +18,8 @@ Với sự hỗ trợ của Redux và Redux Toolkit, hFilm mang lại trải ngh
 6. HEADER , FOOTER
 7. CAROUSEL SECTION , GENRES COMPONENT
 8. POPULAR, TOP RATED , FIX BANNER
+9. DETAILS PAGE
+10. SEARCH PAGE
+11. FINISH HFILM
+
+![POSTER](../hFilm/src/assets/poster.png)
