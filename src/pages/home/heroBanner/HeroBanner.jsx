@@ -31,10 +31,15 @@ const HeroBanner = () => {
       navigate(`/search/${query}`);
     }
   };
+  const handleSearchButtonClick = () => {
+    if (query.length > 0) {
+      navigate(`/search/${query}`);
+    }
+  };
 
   return (
     <div className="heroBanner">
-      {backgrounds.length > 0 && ( // Check if there are backgrounds to display
+      {backgrounds.length > 0 && (
         <Carousel
           showThumbs={false}
           showArrows={false}
@@ -65,7 +70,7 @@ const HeroBanner = () => {
               onKeyUp={searchQueryHandler}
               onChange={(e) => setQuery(e.target.value)}
             />
-            <button>Search</button>
+            <button onClick={handleSearchButtonClick}>Search</button>
           </div>
         </div>
       </ContentWrapper>
